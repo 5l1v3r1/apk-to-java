@@ -1,2 +1,4 @@
 examples/HelloWorld
 dex2jar
+jd-cmd
+apk-to-java.rc

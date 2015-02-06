@@ -5,6 +5,9 @@ filename=${filename%.*}
 
 original=$(readlink -f $1)
 
+echo "filename=$filename"
+echo "original=$original"
+
 mkdir -p $filename/apk
 mkdir -p $filename/class
 
@@ -13,9 +16,9 @@ pushd $filename/apk
 unzip $original
 $DEX2JAR classes.dex
 
-cd ../class
+cd ..
 
-unzip ../apk/classes_dex2jar.jar
+$JDCMD apk/classes_dex2jar.jar -od java
 
 popd
 
