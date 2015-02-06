@@ -1,7 +1,7 @@
 
 > apk-to-java.rc
-echo "export DEX2JAR=`pwd`/dex2jar/dex2jar.sh" >> apk-to-java.rc
-echo "export JDCMD=\"java -jar `pwd`/jd-cmd/jd-cli/target/jd-cli.jar\"" >> apk-to-java.rc
+echo "export APK2JAVA_HOME=`pwd`" >> apk-to-java.rc
+echo "alias apk2java=\"`pwd`/scripts/apk-to-java.sh\"" >> apk-to-java.rc
 >> apk-to-java.rc
 
 if [ ! -e dex2jar ]

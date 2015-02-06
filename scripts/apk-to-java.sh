@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ -z $APK2JAVA_HOME ]
+then
+  echo "Needs to source apk-to-java.rc"
+  exit
+fi
+
 filename=$(basename $1)
 filename=${filename%.*}
 
@@ -14,11 +20,11 @@ mkdir -p $filename/class
 pushd $filename/apk
 
 unzip $original
-$DEX2JAR classes.dex
+$APK2JAVA_HOME/dex2jar/dex2jar.sh classes.dex
 
 cd ..
 
-$JDCMD apk/classes_dex2jar.jar -od java
+java -jar $APK2JAVA_HOME/jd-cmd/jd-cli/target/jd-cli.jar apk/classes_dex2jar.jar -od java
 
 popd
 
