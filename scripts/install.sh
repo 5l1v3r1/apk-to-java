@@ -25,3 +25,31 @@ then
   cd ..
 fi
 
+if [ ! -e cfr_0_96.jar ]
+then
+  http://www.benf.org/other/cfr/cfr_0_96.jar
+fi
+
+if [ ! -e fernflower ]
+then
+  git clone git@github.com:fesh0r/fernflower.git
+  cd fernflower
+  ant
+  cd ..
+fi
+
+if [ ! -e bytecode-viewer ]
+then
+  git clone git@github.com:Konloch/bytecode-viewer.git
+fi
+
+if [ ! -e Krakatau ]
+then
+  git clone git@github.com:Storyyeller/Krakatau.git
+fi
+
+if [ ! -e jd-core-java ]
+then
+  git clone git@github.com:nviennot/jd-core-java.git
+fi
+
