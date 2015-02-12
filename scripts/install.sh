@@ -12,6 +12,11 @@ then
   rm dex2jar-0.0.9.15.zip
 fi
 
+if [ ! -e apktool_2.0.0rc3.jar ]
+then
+  wget https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.0.0rc3.jar
+fi
+
 if [ ! -e jd-cmd ]
 then
   git clone git://github.com/kwart/jd-cmd.git
